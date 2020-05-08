@@ -17,5 +17,7 @@ export default createGlobalStyle`
     background: #e71c22;
     -webkit-font-smoothing: antialiased !important;
     background-image: url(${marvel});
+    max-width: 1020px;
+    margin: 0 auto;
   }
 `;
