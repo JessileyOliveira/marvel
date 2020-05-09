@@ -15,7 +15,6 @@ export const Container = styled.div`
   }
 
   & > a > h3 {
-    border-bottom: 1px solid #ddd;
     font-weight: bold;
     width: auto;
     color: #333;
