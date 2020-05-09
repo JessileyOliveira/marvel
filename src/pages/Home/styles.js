@@ -28,17 +28,21 @@ export const Search = styled.input`
   border-radius: 0.25rem;
 `;
 
-export const List = styled.div`
+export const ListContainer = styled.div`
   width: 100%;
   background: #fff;
   margin: 12px 0px;
   padding: 12px 12px;
   border-radius: 8px;
+  -webkit-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
+  -moz-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
+  box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
+`;
+
+export const List = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-gap: 8px;
   grid-column-gap: 8px;
-  -webkit-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
-  -moz-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
-  box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
+  border-bottom: 1px solid #eee;
 `;

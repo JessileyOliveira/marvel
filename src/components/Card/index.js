@@ -1,8 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Container } from './styles';
-
-import { Link } from 'react-router-dom';
 
 function Card(props) {
   const { id, name, image } = props;
