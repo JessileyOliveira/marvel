@@ -20,7 +20,7 @@ jest.mock('react-router-dom', () => ({
 
 describe('Home tests', () => {
   afterEach(() => {
-    cleanup;
+    cleanup();
     apiMock.reset();
   });
   it('Should exist a input to search', () => {
@@ -147,6 +147,51 @@ describe('Home tests', () => {
       expect(apiMock.history.get.length).toBe(2);
       expect(getByText('Abyss')).toBeDefined();
       expect(getByText('Abyss 2')).toBeDefined();
+    });
+  });
+
+  it('Should to be filter heros', async () => {
+    const getData = {
+      count: 1,
+      limit: 1,
+      offset: 0,
+      results: [
+        {
+          id: 1009149,
+          modified: '2014-04-29T14:10:43-0400',
+          name: 'Abyss',
+          thumbnail: {
+            extension: 'jpg',
+            path: 'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784',
+          },
+        },
+      ],
+      total: 1,
+    };
+
+    apiMock.onGet(`/characters`).reply(200, { data: getData });
+
+    const { getByPlaceholderText, getByText } = render(<Home />);
+
+    getData.results = [
+      {
+        id: 1009149,
+        modified: '2014-04-29T14:10:43-0400',
+        name: 'America',
+        thumbnail: {
+          extension: 'jpg',
+          path: 'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784',
+        },
+      },
+    ];
+
+    await fireEvent.change(getByPlaceholderText('Procurar'), {
+      target: { value: 'Amer' },
+    });
+
+    await waitFor(() => {
+      expect(apiMock.history.get.length).toBe(2);
+      expect(getByText('America')).toBeDefined();
     });
   });
 });
