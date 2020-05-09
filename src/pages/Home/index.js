@@ -36,7 +36,12 @@ export default function Home() {
       <List>
         {herosList &&
           herosList.map((hero) => (
-            <Card key={hero.id} name={hero.name} image={hero.thumbnail.path} />
+            <Card
+              key={hero.id}
+              id={hero.id}
+              name={hero.name}
+              image={hero.thumbnail}
+            />
           ))}
       </List>
     </Container>
