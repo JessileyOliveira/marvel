@@ -37,6 +37,14 @@ export const ListContainer = styled.div`
   -webkit-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
   -moz-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
   box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
+
+  & > h1 {
+    color: #222;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+  }
 `;
 
 export const List = styled.div`
@@ -45,4 +53,20 @@ export const List = styled.div`
   grid-row-gap: 8px;
   grid-column-gap: 8px;
   border-bottom: 1px solid #eee;
+`;
+
+export const More = styled.div`
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: ${(props) => (props.end ? 'default' : 'pointer')};
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  transition: color 0.4s;
+
+  &:hover {
+    color: ${(props) => (props.end ? '#aaa' : '#e71d23')};
+  }
 `;
