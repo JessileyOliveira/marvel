@@ -8,8 +8,8 @@ export const Container = styled.div`
 `;
 
 export const Loading = styled.div`
-  border: 8px solid #f3f3f3; /* Light grey */
-  border-top: 8px solid #ff0000; /* Blue */
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #ff0000;
   border-radius: 50%;
   width: 60px;
   height: 60px;
