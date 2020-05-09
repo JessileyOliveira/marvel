@@ -15,11 +15,14 @@ import Card from '../../components/Card';
 import Loader from '../../components/Loader';
 
 export default function Home() {
+  const [isMounted, setIsMounted] = useState(false);
   const [herosList, setHerosList] = useState([]);
   const [filter, setFilter] = useState({ search: '', page: 1, limit: 15 });
   const [endList, setEndList] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [searchTimeout, setSearchTimeout] = useState();
   const getHeros = async () => {
+    setLoading(true);
     const apiParans = {
       ts: params.ts,
       apikey: params.apikey,
@@ -43,12 +46,30 @@ export default function Home() {
 
   useEffect(() => {
     getHeros();
+  }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      if (searchTimeout) clearTimeout(searchTimeout);
+      setSearchTimeout(
+        setTimeout(() => {
+          setHerosList([]);
+          getHeros();
+        }, 1000)
+      );
+    }
+    setIsMounted(true);
   }, [filter]);
 
   return (
     <Container>
       <SearchContainer data-testid="searchContainer">
-        <Search placeholder="Procurar" />
+        <Search
+          onChange={(e) => {
+            setFilter({ ...filter, page: 1, search: e.target.value });
+          }}
+          placeholder="Procurar"
+        />
       </SearchContainer>
       <ListContainer>
         <h1>Heróis</h1>
