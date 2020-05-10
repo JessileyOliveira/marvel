@@ -10,6 +10,7 @@ export const Container = styled.div`
   & > a {
     min-height: 493px;
     min-width: 300px;
+    max-width: 300px;
     text-decoration: none;
     text-align: center;
     background: #fff;

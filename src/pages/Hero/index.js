@@ -95,7 +95,7 @@ export default function Hero() {
                 Voltar
               </span>
             </div>
-            <h3>Series:</h3>
+            <h3>Séries de quadrinho:</h3>
             <ul data-testid="seriesList">
               {hero.series.items.map((serie) => (
                 <li key={serie.name}>{serie.name}</li>

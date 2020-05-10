@@ -16,6 +16,7 @@ export default function Home() {
   const [searchTimeout, setSearchTimeout] = useState();
   const getHeros = async () => {
     setLoading(true);
+    setEndList(false);
     const apiParans = {
       ts: params.ts,
       apikey: params.apikey,
@@ -45,6 +46,7 @@ export default function Home() {
       if (searchTimeout) clearTimeout(searchTimeout);
       setSearchTimeout(
         setTimeout(() => {
+          if (filter.page === 1) setHerosList([]);
           getHeros();
         }, 1000)
       );
