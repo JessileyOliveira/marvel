@@ -20,12 +20,10 @@ describe('Home tests', () => {
 
   it('Should exist a input to search', async () => {
     apiMock.onGet(`/characters`).reply(200, { data: [] });
-    const { getByPlaceholderText, getByTestId } = render(<Home />);
+    const { getByPlaceholderText } = render(<Home />);
 
     await waitFor(() => {
-      expect(getByTestId('searchContainer')).toContainElement(
-        getByPlaceholderText('Procurar')
-      );
+      expect(getByPlaceholderText('Procurar')).toBeDefined();
     });
   });
 

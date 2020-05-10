@@ -12,7 +12,7 @@ describe('Card tests', () => {
     cleanup();
   });
 
-  it('Should exist a aame and image', async () => {
+  it('Should exist a name and image', async () => {
     const objectCard = {
       id: 123,
       name: 'Abyss',
@@ -34,7 +34,7 @@ describe('Card tests', () => {
       const image = getByTestId('cardImage');
       expect(image).toHaveAttribute('src');
       expect(image.src).toBe(
-        `${objectCard.thumbnail.path}/standard_fantastic.${objectCard.thumbnail.extension}`
+        `${objectCard.thumbnail.path}/portrait_uncanny.${objectCard.thumbnail.extension}`
       );
     });
   });
