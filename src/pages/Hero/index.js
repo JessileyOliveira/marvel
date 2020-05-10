@@ -96,16 +96,16 @@ export default function Hero() {
               </span>
             </div>
             <h3>Séries de quadrinho:</h3>
-            <ul data-testid="seriesList">
+            <ol data-testid="seriesList">
               {hero.series.items.map((serie) => (
                 <li key={serie.name}>{serie.name}</li>
               ))}
-            </ul>
+            </ol>
             {loadingSerie && <Loader width={28} border={4} />}
             {!loadingSerie &&
               !loading &&
               (endList ? (
-                <More end="true">Sem mais Series!</More>
+                <More end="true">Sem mais Séries!</More>
               ) : (
                 <More
                   onClick={() => {

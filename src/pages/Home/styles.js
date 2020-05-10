@@ -61,6 +61,6 @@ export const More = styled.div`
   transition: color 0.4s;
 
   &:hover {
-    color: ${(props) => (props.end ? '#fff' : '#ccc')};
+    color: ${(props) => (props.end ? '#fff' : '#aaa')};
   }
 `;
