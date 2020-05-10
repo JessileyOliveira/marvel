@@ -23,13 +23,16 @@ describe('Home tests', () => {
     cleanup();
     apiMock.reset();
   });
-  it('Should exist a input to search', () => {
+
+  it('Should exist a input to search', async () => {
     apiMock.onGet(`/characters`).reply(200, { data: [] });
     const { getByPlaceholderText, getByTestId } = render(<Home />);
 
-    expect(getByTestId('searchContainer')).toContainElement(
-      getByPlaceholderText('Procurar')
-    );
+    await waitFor(() => {
+      expect(getByTestId('searchContainer')).toContainElement(
+        getByPlaceholderText('Procurar')
+      );
+    });
   });
 
   it('Should exist a card when the api returns', async () => {
