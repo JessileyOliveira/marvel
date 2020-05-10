@@ -34,7 +34,6 @@ export default function Home() {
     const response = await api.get(`/characters`, {
       params: apiParans,
     });
-    console.log(response.data);
     if (response.data.data.count < response.data.data.limit) setEndList(true);
     if (filter.page === 1) {
       setHerosList(response.data.data.results);
@@ -53,7 +52,6 @@ export default function Home() {
       if (searchTimeout) clearTimeout(searchTimeout);
       setSearchTimeout(
         setTimeout(() => {
-          setHerosList([]);
           getHeros();
         }, 1000)
       );
@@ -77,7 +75,7 @@ export default function Home() {
           {herosList &&
             herosList.map((hero) => (
               <Card
-                key={hero.id}
+                key={hero.id.toString()}
                 id={hero.id}
                 name={hero.name}
                 image={hero.thumbnail}
