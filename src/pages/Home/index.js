@@ -2,14 +2,7 @@ import React, { useEffect, useState } from 'react';
 import api from '../../services/marvelApi';
 import params from '../../services/marvelParams';
 
-import {
-  Container,
-  SearchContainer,
-  Search,
-  ListContainer,
-  List,
-  More,
-} from './styles';
+import { Container, Search, List, More } from './styles';
 
 import Card from '../../components/Card';
 import Loader from '../../components/Loader';
@@ -61,42 +54,38 @@ export default function Home() {
 
   return (
     <Container>
-      <SearchContainer data-testid="searchContainer">
-        <Search
-          onChange={(e) => {
-            setFilter({ ...filter, page: 1, search: e.target.value });
-          }}
-          placeholder="Procurar"
-        />
-      </SearchContainer>
-      <ListContainer>
-        <h1>Heróis</h1>
-        <List>
-          {herosList &&
-            herosList.map((hero) => (
-              <Card
-                key={hero.id.toString()}
-                id={hero.id}
-                name={hero.name}
-                image={hero.thumbnail}
-              />
-            ))}
-        </List>
-        {loading && <Loader />}
-        {!loading &&
-          (endList ? (
-            <More end="true">Sem mais heróis!</More>
-          ) : (
-            <More
-              onClick={() => {
-                setLoading(true);
-                setFilter({ ...filter, page: filter.page + 1 });
-              }}
-            >
-              Carregar mais
-            </More>
+      <div>HERÓIS</div>
+      <Search
+        onChange={(e) => {
+          setFilter({ ...filter, page: 1, search: e.target.value });
+        }}
+        placeholder="Procurar"
+      />
+      <List>
+        {herosList &&
+          herosList.map((hero) => (
+            <Card
+              key={hero.id.toString()}
+              id={hero.id}
+              name={hero.name}
+              image={hero.thumbnail}
+            />
           ))}
-      </ListContainer>
+      </List>
+      {loading && <Loader />}
+      {!loading &&
+        (endList ? (
+          <More end="true">Sem mais heróis!</More>
+        ) : (
+          <More
+            onClick={() => {
+              setLoading(true);
+              setFilter({ ...filter, page: filter.page + 1 });
+            }}
+          >
+            Carregar mais
+          </More>
+        ))}
     </Container>
   );
 }

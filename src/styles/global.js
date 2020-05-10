@@ -4,14 +4,13 @@ import Robotottf from '../assets/fonts/Roboto/Roboto-Regular.ttf';
 
 export default createGlobalStyle`
 
-
-@font-face {
-        font-family: 'Roboto';
-        src: local('Roboto'), local('Roboto'),
-        url(${Robotottf}) format('trueType');
-        font-weight: 300;
-        font-style: normal;
-    }
+  @font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'), local('Roboto'),
+    url(${Robotottf}) format('trueType');
+    font-weight: 300;
+    font-style: normal;
+  }
 
   *{
     font-family: 'Roboto';

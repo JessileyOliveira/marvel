@@ -2,69 +2,51 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   max-width: 1020px;
-  margin: 0px auto;
-`;
-
-export const SearchContainer = styled.div`
-  width: 100%;
-  background: #fff;
+  margin: 12px auto 0px auto;
   padding: 12px;
-  margin: 12px 0px;
-  border-radius: 8px;
-  -webkit-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
-  -moz-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
-  box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
+
+  & > div:nth-child(1) {
+    width: 100%;
+    font-size: 42px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+    text-shadow: -6px 6px 8px black;
+  }
 `;
 
 export const Search = styled.input`
   width: 100%;
-  background: #fff;
+  background: none;
   border: 1px solid #ccc;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 1.5;
-  color: #495057;
-  border: 1px solid #ced4da;
+  color: #fff;
+  border: 2px solid #fff;
   border-radius: 0.25rem;
-`;
-
-export const ListContainer = styled.div`
-  width: 100%;
-  background: #fff;
-  padding: 12px;
   margin: 12px 0px;
-  border-radius: 8px;
-  -webkit-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
-  -moz-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
-  box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
 
-  & > h1 {
-    color: #222;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 4px;
-    margin-bottom: 4px;
+  &::placeholder {
+    color: #fff;
   }
 `;
 
 export const List = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 12px;
+  grid-row-gap: 28px;
   grid-column-gap: 12px;
-  border-bottom: 1px solid #eee;
 
-  @media (max-width: 852px) {
+  @media (max-width: 980px) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (max-width: 578px) {
+  @media (max-width: 680px) {
     grid-template-columns: 1fr;
-  }
-
-  & > div > a > img {
-    margin-top: 8px;
   }
 `;
 
@@ -73,13 +55,12 @@ export const More = styled.div`
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-  color: #aaa;
+  color: #fff;
   cursor: ${(props) => (props.end ? 'default' : 'pointer')};
   padding: 12px;
-  border-bottom: 1px solid #eee;
   transition: color 0.4s;
 
   &:hover {
-    color: ${(props) => (props.end ? '#aaa' : '#e71d23')};
+    color: ${(props) => (props.end ? '#fff' : '#ccc')};
   }
 `;

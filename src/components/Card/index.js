@@ -9,13 +9,12 @@ function Card(props) {
   return (
     <Container>
       <Link to={`/hero/${id}`}>
-        <h3>{name}</h3>
-
         <img
           data-testid="cardImage"
-          src={`${image.path}/standard_fantastic.${image.extension}`}
+          src={`${image.path}/portrait_uncanny.${image.extension}`}
           alt={name}
         />
+        <h3>{name}</h3>
       </Link>
     </Container>
   );
