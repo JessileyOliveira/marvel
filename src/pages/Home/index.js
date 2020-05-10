@@ -17,7 +17,7 @@ import Loader from '../../components/Loader';
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
   const [herosList, setHerosList] = useState([]);
-  const [filter, setFilter] = useState({ search: '', page: 1, limit: 15 });
+  const [filter, setFilter] = useState({ search: '', page: 1, limit: 12 });
   const [endList, setEndList] = useState(false);
   const [loading, setLoading] = useState(true);
   const [searchTimeout, setSearchTimeout] = useState();

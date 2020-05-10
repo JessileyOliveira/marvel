@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 100%;
-  margin: 12px;
+  max-width: 1020px;
+  margin: 0px auto;
 `;
 
 export const SearchContainer = styled.div`
-  max-width: 100%;
+  width: 100%;
   background: #fff;
-  padding: 12px 12px;
+  padding: 12px;
+  margin: 12px 0px;
   border-radius: 8px;
   -webkit-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
   -moz-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
@@ -31,8 +32,8 @@ export const Search = styled.input`
 export const ListContainer = styled.div`
   width: 100%;
   background: #fff;
+  padding: 12px;
   margin: 12px 0px;
-  padding: 12px 12px;
   border-radius: 8px;
   -webkit-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
   -moz-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
@@ -50,9 +51,21 @@ export const ListContainer = styled.div`
 export const List = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 8px;
-  grid-column-gap: 8px;
+  grid-row-gap: 12px;
+  grid-column-gap: 12px;
   border-bottom: 1px solid #eee;
+
+  @media (max-width: 852px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 578px) {
+    grid-template-columns: 1fr;
+  }
+
+  & > div > a > img {
+    margin-top: 8px;
+  }
 `;
 
 export const More = styled.div`

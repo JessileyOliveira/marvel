@@ -8,11 +8,11 @@ export const Container = styled.div`
 `;
 
 export const Loading = styled.div`
-  border: ${(props) => `${props.border}px solid #f3f3f3`};
-  border-top: ${(props) => `${props.border}px solid #ff0000`};
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #ff0000;
   border-radius: 50%;
-  width: ${(props) => `${props.width}px`};
-  height: ${(props) => `${props.width}px`};
+  width: 60px;
+  height: 60px;
   animation: spin 2s linear infinite;
 
   @keyframes spin {

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
+  max-width: 1020px;
   background: #fff;
-  margin: 12px;
+  margin: 12px auto;
   padding: 12px;
   border-radius: 8px;
   display: flex;
@@ -11,12 +11,31 @@ export const Container = styled.div`
   -webkit-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
   -moz-box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
   box-shadow: -2px 4px 5px 0px rgba(50, 50, 50, 0.41);
+
+  & > div {
+    width: 100%;
+    display: flex;
+  }
+
+  @media (max-width: 680px) {
+    & > div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 `;
 
 export const ImageHero = styled.img`
   border-radius: 4px;
   object-fit: cover;
   max-height: 450px;
+
+  @media (max-width: 680px) {
+    & > div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 `;
 
 export const DescriptionConatiner = styled.div`
@@ -24,6 +43,7 @@ export const DescriptionConatiner = styled.div`
   padding: 0px 8px;
   display: flex;
   flex-direction: column;
+
   & > #name {
     width: 100%;
     border-bottom: 1px solid #eee;
@@ -32,8 +52,15 @@ export const DescriptionConatiner = styled.div`
     align-items: flex-end;
   }
 
+  @media (max-width: 680px) {
+    & > #name {
+      margin-top: 8px;
+    }
+  }
+
   & > #name > span {
     color: #e71c22;
+    font-weight: bold;
     cursor: pointer;
     transition: color 0.4s;
   }

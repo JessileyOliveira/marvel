@@ -81,7 +81,7 @@ export default function Hero() {
   return (
     <Container>
       {hero.id && (
-        <>
+        <div>
           <ImageHero
             data-testid="heroImg"
             src={`${hero.thumbnail.path}/portrait_uncanny.${hero.thumbnail.extension}`}
@@ -117,7 +117,7 @@ export default function Hero() {
                 </More>
               ))}
           </DescriptionConatiner>
-        </>
+        </div>
       )}
       {loading && <Loader />}
     </Container>
