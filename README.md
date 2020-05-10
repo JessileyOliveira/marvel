@@ -1,6 +1,6 @@
 # Squadra - Marvel
 
-> Sistema de listagem de heróis e visualizão de series de heróis
+> Sistema de listagem de heróis e visualização de séries dos heróis
 
 ## Instalação
 
@@ -22,6 +22,9 @@ Você deverá ter em sua máquina os seguinte itens:
    ```sh
    yarn
    ```
+
+3. Crie e preencha o arquivo `.env` com base no arquivo `.env-example`.
+   > Obs:. Deve-se utilizar a `privateKey` e a `apiKey` adquirida no site [Developer Marvel](https://developer.marvel.com/).
 
 ## Execução
 
@@ -51,11 +54,11 @@ ou se você usa yarn:
 yarn build
 ```
 
-_Isso ira criar a pasta `build` com os arquivos para produção._
+_Isso irá criar a pasta `build` com os arquivos para uso em produção._
 
 ## Testes:
 
-_Os testes estão localizados na pasta `__tests__`._
+_Os testes estão localizados na pasta `./src/__tests__`._
 
 Use o comando abaixo para executar os testes:
 
@@ -71,12 +74,12 @@ yarn test
 
 ## Páginas
 
-### `Perguntas:`
+### `Home:`
 
-> Página responsável pela listagem e cadastro das perguntas, também é possível ver o autor, data e quantidade de respostas de cada pergunta.
+> Página responsável pela listagem dos heróis, também é possível procurar heróis pelo nome. Como a API só disponibiliza a pesquisa tendo que o nome começar com o valor pesquisado,é assim que a pesquisa irá funcionar.
 
 #
 
-### `Respostas:`
+### `Herói:`
 
-> Página responsável pela listagem e cadastro das respostas de uma pergunta, também é possível ver o autor e data das respostas.
+> Página responsável por mostrar as séries de quadrinhos que o herói participou, também é possível ver sua foto e nome.
